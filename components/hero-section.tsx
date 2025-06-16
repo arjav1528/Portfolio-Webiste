@@ -127,7 +127,8 @@ export function HeroSection() {
                     loop: true,
                     delay: 100,
                     deleteSpeed: 50,
-                    pauseFor: 2000,
+                    cursor: '|',
+                    wrapperClassName: 'text-primary'
                   }}
                 />
               )}
