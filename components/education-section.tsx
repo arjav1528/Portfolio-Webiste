@@ -18,16 +18,15 @@ export function EducationSection() {
     duration: 'Aug 2023 – May 2027',
     location: 'Goa, India',
     status: 'Pursuing',
-    description: 'Comprehensive engineering program focusing on electronics, instrumentation, and control systems with strong emphasis on mathematical foundations and practical applications.',
+    description: 'Comprehensive engineering program focusing on electronics, instrumentation, and control systems with strong emphasis on mathematical foundations and practical applications. While pursuing my core electronics curriculum, I have also undertaken several Computer Science major courses to complement my technical skills and broaden my expertise.',
     coursework: [
-      'Data Structures and Algorithms',
       'Object-Oriented Programming',
-      'Digital Signal Processing',
+      'Digital Design',
+      'Computer Programming',
       'Control Systems',
-      'Microprocessors and Microcontrollers',
+      'Microprocessors and Interfacing',
       'Engineering Mathematics',
       'Circuit Analysis',
-      'Embedded Systems',
     ],
     achievements: [
       'App Development Head - Developers\' Society',
@@ -126,17 +125,20 @@ export function EducationSection() {
                   </div>
                 </CardHeader>
                 <CardContent className="relative">
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-muted-foreground leading-relaxed mb-20">
                     {education.description}
                   </p>
                   
                   {/* Institution Logo/Placeholder */}
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-lg flex items-center justify-center mb-6">
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-lg flex items-center justify-center mb-20">
                     <div className="text-center">
-                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl font-bold text-white">BITS</span>
+                      <div className="w-full h-full rounded-lg overflow-hidden">
+                        <img
+                          src="/bits.jpg"
+                          alt="BITS Pilani Goa Campus"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <p className="text-sm text-muted-foreground">BITS Pilani, Goa Campus</p>
                     </div>
                   </div>
                 </CardContent>

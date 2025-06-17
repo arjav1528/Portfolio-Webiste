@@ -14,6 +14,16 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      title: 'App Development Head',
+      company: 'Developers\' Society BITS Goa',
+      period: 'May 2025 - Present',
+      location: 'BITS Pilani, Goa',
+      type: 'Leadership Role',
+      description: 'Led the development of the society\'s mobile applications, managing a team of developers and overseeing the technical development of society applications. Responsible for architecture decisions and code quality standards.',
+      technologies: ['Flutter', 'Firebase', 'Node.js', 'Project Management'],
+      current: true,  
+    },
+    {
       title: 'Senior Flutter Intern',
       company: 'Pragati One',
       period: 'Dec 2024 – Jan 2025',
@@ -21,16 +31,6 @@ export function ExperienceSection() {
       type: 'Internship',
       description: 'Specialized in Flutter development, working on mobile applications with focus on performance optimization and user experience improvements.',
       technologies: ['Flutter', 'Dart', 'Mobile Development', 'UI/UX'],
-      current: false,
-    },
-    {
-      title: 'Senior Application Developer',
-      company: 'Developers\' Society BITS Goa',
-      period: 'June 2024 – April 2025',
-      location: 'BITS Pilani, Goa',
-      type: 'Leadership Role',
-      description: 'Leading application development initiatives, managing multiple projects, and overseeing the technical development of society applications. Responsible for architecture decisions and code quality standards.',
-      technologies: ['Flutter', 'React', 'Firebase', 'Node.js', 'Project Management'],
       current: false,
     },
     {
@@ -43,6 +43,18 @@ export function ExperienceSection() {
       technologies: ['Teaching', 'Flutter', 'Mobile Development', 'Mentoring'],
       current: false,
     },
+    {
+      title: 'Senior Application Developer',
+      company: 'Developers\' Society BITS Goa',
+      period: 'June 2024 – April 2025',
+      location: 'BITS Pilani, Goa',
+      type: 'Project Management',
+      description: 'Leading application development initiatives, managing multiple projects, and overseeing the technical development of society applications. Responsible for architecture decisions and code quality standards.',
+      technologies: ['Flutter', 'React', 'Firebase', 'Node.js', 'Project Management'],
+      current: false,
+    },
+    
+    
   ];
 
   const containerVariants = {
