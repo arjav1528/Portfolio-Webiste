@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
+import Image from 'next/image';
 
 export function HeroSection() {
   const { ref, inView } = useInView({
@@ -88,18 +89,17 @@ export function HeroSection() {
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1"
               >
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center text-4xl font-bold text-blue-600 dark:text-blue-400">
-                  AP
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/photo.jpg"
+                    alt="Arjav Patel"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, type: "spring", stiffness: 300, damping: 10 }}
-                className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center"
-              >
-                <div className="w-3 h-3 bg-white rounded-full" />
-              </motion.div>
+              
             </div>
           </motion.div>
 
@@ -122,7 +122,7 @@ export function HeroSection() {
               {inView && (
                 <Typewriter
                   options={{
-                    strings: ['Flutter', 'React Native', 'NextJS', 'React', 'Python'],
+                    strings: ['Flutter', 'React Native', 'NextJS', 'React', 'Flask', 'FastAPI', 'NodeJS', 'Python', 'Java'],
                     autoStart: true,
                     loop: true,
                     delay: 100,
@@ -178,9 +178,9 @@ export function HeroSection() {
             className="flex justify-center space-x-6"
           >
             {[
-              { icon: Github, href: 'https://github.com/arjavpatel', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/arjavpatel', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:arjav.patel@example.com', label: 'Email' },
+              { icon: Github, href: 'https://github.com/arjav1528', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://linkedin.com/in/arjav1528', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:arjav1528@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
@@ -198,22 +198,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center text-muted-foreground"
-          >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ArrowDown className="h-4 w-4" />
-          </motion.div>
-        </motion.div>
+        
       </div>
     </section>
   );
