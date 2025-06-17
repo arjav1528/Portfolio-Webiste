@@ -48,14 +48,14 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'arjav.patel@example.com',
-      href: 'mailto:arjav.patel@example.com',
+      value: 'arjav1528@gmail.com.com',
+      href: 'mailto:arjav1528@gmail.com.com',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 9427676356',
       href: 'tel:+919876543210',
       color: 'from-green-500 to-emerald-500',
     },
