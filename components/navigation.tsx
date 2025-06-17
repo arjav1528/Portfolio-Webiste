@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, ExternalLink } from 'lucide-react';
 
 const navigationItems = [
   { name: 'Home', href: '#hero' },
@@ -46,7 +46,7 @@ export function Navigation() {
 
   const handleDownloadResume = () => {
     // In a real implementation, this would download the actual resume
-    window.open('#', '_blank');
+    window.open('https://drive.google.com/file/d/1vh_hmbzjXJt2mnL5phMr1XiAYaecgzZd/view?usp=sharing', '_blank');
   };
 
   return (
@@ -107,7 +107,7 @@ export function Navigation() {
                 size="sm"
                 className="group"
               >
-                <Download className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
+                <ExternalLink className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
                 Resume
               </Button>
             </motion.div>

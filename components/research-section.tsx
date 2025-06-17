@@ -25,16 +25,6 @@ export function ResearchSection() {
       status: 'Published',
       icon: BarChart3,
     },
-    {
-      title: 'Mobile App Performance Optimization',
-      description: 'Research focused on optimizing mobile application performance through various techniques including code optimization, resource management, and user experience improvements.',
-      domain: 'Mobile Computing & HCI',
-      methodology: ['Performance Profiling', 'A/B Testing', 'User Studies', 'Benchmarking'],
-      tools: ['Flutter', 'Dart', 'Firebase', 'Analytics Tools'],
-      outcomes: ['50% Load Time Reduction', 'User Experience Guidelines', 'Best Practices Framework'],
-      status: 'In Review',
-      icon: BookOpen,
-    },
   ];
 
   const containerVariants = {
@@ -182,7 +172,7 @@ export function ResearchSection() {
                       className="group"
                       asChild
                     >
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a href="https://drive.google.com/file/d/1nPuPJCii1F_NQe8T9W8MvkunTShFVMNj/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                         <FileText className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
                         Read Paper
                       </a>
@@ -193,9 +183,9 @@ export function ResearchSection() {
                       className="group"
                       asChild
                     >
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/arjav1528/DigitalTwin" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
-                        View Data
+                        View Source Code
                       </a>
                     </Button>
                   </div>
@@ -205,34 +195,7 @@ export function ResearchSection() {
           ))}
         </motion.div>
 
-        {/* Research Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8"
-        >
-          {[
-            { label: 'Research Papers', value: '3+', icon: FileText },
-            { label: 'Citations', value: '15+', icon: BookOpen },
-            { label: 'Research Areas', value: '2', icon: BarChart3 },
-            { label: 'Collaborations', value: '5+', icon: ExternalLink },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">{stat.value}</h3>
-              <p className="text-muted-foreground">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+       
       </div>
     </section>
   );

@@ -16,34 +16,30 @@ export function ProjectsSection() {
   const projects = [
     {
       title: 'BITS Goa Fest Management App',
-      description: 'A comprehensive festival management application built for BITS Pilani Goa campus. Features include event scheduling, ticket booking, real-time updates, and user management with a modern, intuitive interface.',
-      image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Developed a scalable Flutter-based fest app for Waves, Quark, and Spree, streamlining event, pass, and schedule management for 3.5K+ users while securely handling ₹6M+ in payments through an integrated payment interface.',
+      image: '/fest-app.jpg',
       technologies: ['Flutter', 'Firebase', 'Node.js', 'REST APIs'],
-      highlights: ['5000+ Downloads', 'Real-time Sync', 'Offline Support'],
-      github: 'https://github.com/arjavpatel/fest-app',
-      demo: 'https://fest-app-demo.com',
+      highlights: ['3500+ Downloads', 'Payment Integration', 'Event Management'],
       featured: true,
       icon: Zap,
     },
     {
       title: 'GiftGenie - AI Gift Recommender',
       description: '3rd Runner Up in the hackathon! An AI-powered gift recommendation system that analyzes user preferences and suggests personalized gifts. Built with React frontend and Flask backend, integrated with Gemini AI.',
-      image: 'https://images.pexels.com/photos/264870/pexels-photo-264870.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/gift-genie.png',
       technologies: ['React', 'Flask', 'Gemini AI', 'Python', 'Machine Learning'],
-      highlights: ['Hackathon Winner', 'AI-Powered', '95% Accuracy'],
-      github: 'https://github.com/arjavpatel/giftgenie',
-      demo: 'https://giftgenie-demo.com',
+      highlights: ['Hackathon 3rd Runner Up' ,'AI-Powered', '85% Accuracy'],
+      github: 'https://github.com/sohamdasx/GiftGenie',
       featured: true,
       icon: Award,
     },
     {
       title: 'Campus Solar Generation Research',
       description: 'A comprehensive research project analyzing solar energy generation patterns on campus. Created interactive data visualizations and predictive models using Python and various data science libraries.',
-      image: 'https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/digital-twin.png',
       technologies: ['Python', 'Data Visualization', 'Pandas', 'NumPy', 'Matplotlib'],
       highlights: ['Research Publication', 'Data Analysis', 'Predictive Models'],
-      github: 'https://github.com/arjavpatel/solar-research',
-      demo: 'https://solar-research-demo.com',
+      github: 'https://github.com/arjav1528/DigitalTwin',
       featured: false,
       icon: Database,
     },
@@ -207,7 +203,7 @@ export function ProjectsSection() {
             className="group px-8 py-3"
             asChild
           >
-            <a href="https://github.com/arjavpatel" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/arjav1528" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5 mr-2 transition-transform group-hover:scale-110" />
               View All Projects on GitHub
             </a>
