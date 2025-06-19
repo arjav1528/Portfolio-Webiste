@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist',
     type: 'website',
   },
+  icons: {
+    shortcut: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
