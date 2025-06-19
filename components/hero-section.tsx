@@ -53,7 +53,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/80 rounded-full blur-xl"
         />
         <motion.div
           animate={{
@@ -66,8 +66,21 @@ export function HeroSection() {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"
+          className="absolute bottom-1/4 right-1/4 w-24 h-24  bg-purple-600/80 rounded-full blur-xl"
         />
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-3/4 left-[10%] w-24 h-24 bg-purple-600/80 rounded-full blur-xl"
+        />
+        
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
@@ -87,9 +100,25 @@ export function HeroSection() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1"
+                className="group w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 relative"
               >
-                <div className="w-full h-full rounded-full overflow-hidden">
+                <span className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 group-hover:animate-ripple" />
+                <style jsx>{`
+                  @keyframes ripple {
+                    from {
+                      opacity: 0.5;
+                      transform: scale(1);
+                    }
+                    to {
+                      opacity: 0;
+                      transform: scale(1.5);
+                    }
+                  }
+                  .animate-ripple {
+                    animation: ripple 1s ease-out infinite;
+                  }
+                `}</style>
+                <div className="w-full h-full rounded-full overflow-hidden relative z-10 bg-background">
                   <Image
                     src="/photo.jpg"
                     alt="Arjav Patel"
@@ -99,7 +128,6 @@ export function HeroSection() {
                   />
                 </div>
               </motion.div>
-              
             </div>
           </motion.div>
 
