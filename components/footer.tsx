@@ -40,8 +40,6 @@ export function Footer() {
               >
                 <Heart className="h-4 w-4 text-red-500 fill-red-500" />
               </motion.div>
-              <span>and</span>
-              <Code className="h-4 w-4 text-blue-500" />
               <span>by</span>
               <Badge variant="secondary" className="px-2 py-1 text-xs">
                 Arjav Patel
@@ -58,23 +56,9 @@ export function Footer() {
               <span>Fueled by coffee and curiosity</span>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-sm text-muted-foreground"
-            >
-              © {currentYear} Arjav Patel. All rights reserved.
-            </motion.p>
+        
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-xs text-muted-foreground/70"
-            >
-              Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion ✨
-            </motion.div>
+            
           </div>
         </motion.div>
       </div>
