@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 export default function NotFound() {
+  const { width = 1024, height = 768 } = useWindowSize();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden">
       {/* Animated background elements */}
@@ -13,12 +16,12 @@ export default function NotFound() {
             key={i}
             className="absolute w-2 h-2 bg-primary/20 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (width || 1024),
+              y: Math.random() * (height || 768),
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (width || 1024),
+              y: Math.random() * (height || 768),
             }}
             transition={{
               duration: Math.random() * 5 + 5,
