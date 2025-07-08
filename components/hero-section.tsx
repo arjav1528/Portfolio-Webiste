@@ -134,7 +134,7 @@ export function HeroSection() {
           {/* Name and Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-sour-gummy"
           >
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Arjav Patel
