@@ -45,8 +45,12 @@ export function Navigation() {
   }, []);
 
   const handleDownloadResume = () => {
-    // In a real implementation, this would download the actual resume
-    window.open('https://drive.google.com/file/d/1vh_hmbzjXJt2mnL5phMr1XiAYaecgzZd/view?usp=sharing', '_blank');
+    const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
+    if (resumeUrl) {
+      window.open(resumeUrl, '_blank');
+    } else {
+      console.error('Resume URL not configured');
+    }
   };
 
   return (
