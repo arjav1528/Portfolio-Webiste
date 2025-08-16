@@ -14,6 +14,17 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      title: 'SDE Intern',
+      company: 'Nudron IoT Solutions',
+      period: 'August 2025 - Present',
+      location: 'Remote',
+      type: 'Internship',
+      description: 'Refurbished existing App\' UI, and merged cross-platform functionalities.',
+      technologies: ['Flutter','Bloc','Postman'],
+      current: true,  
+    },
+    
+    {
       title: 'App Development Head',
       company: 'Developers\' Society BITS Goa',
       period: 'May 2025 - Present',
