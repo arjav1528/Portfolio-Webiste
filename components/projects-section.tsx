@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink, Award, Zap, Database } from 'lucide-react';
+import { Github, Smartphone, Bot, ShoppingCart, ChartNetwork, Calendar } from 'lucide-react';
 
 export function ProjectsSection() {
   const { ref, inView } = useInView({
@@ -17,21 +17,19 @@ export function ProjectsSection() {
     {
       title: 'BITS Goa Fest Management App',
       description: 'Developed a scalable Flutter-based fest app for Waves, Quark, and Spree, streamlining event, pass, and schedule management for 3.5K+ users while securely handling ₹6M+ in payments through an integrated payment interface.',
-      image: '/fest-app.jpg',
       technologies: ['Flutter', 'Firebase', 'Node.js', 'REST APIs'],
       highlights: ['3500+ Downloads', 'Payment Integration', 'Event Management'],
       featured: true,
-      icon: Zap,
+      icon: Smartphone,
     },
     {
-      title: 'GiftGenie - AI Gift Recommender',
-      description: '3rd Runner Up in the hackathon! An AI-powered gift recommendation system that analyzes user preferences and suggests personalized gifts. Built with React frontend and Flask backend, integrated with Gemini AI.',
-      image: '/gift-genie.png',
-      technologies: ['React', 'Flask', 'Gemini AI', 'Python', 'Machine Learning'],
-      highlights: ['Hackathon 3rd Runner Up' ,'AI-Powered', '85% Accuracy'],
-      github: 'https://github.com/sohamdasx/GiftGenie',
+      title: "Student Welfare Division - SWD Store",
+      description: 'An All-In-One Platform where Clubs and Departments from BITS Goa can sell their merchandise, and a clean user interface for students to browse and purchase items.',
+      technologies: ['Python', 'Django', 'MongoDB', 'HTML/CSS'],
+      highlights: ['User-Friendly', 'Secure Database'],
+      github: 'https://github.com/arjav1528/swd_django',
       featured: true,
-      icon: Award,
+      icon: ShoppingCart,
     },
     {
       title: 'Campus Solar Generation Research',
@@ -40,9 +38,28 @@ export function ProjectsSection() {
       technologies: ['Python', 'Data Visualization', 'Pandas', 'NumPy', 'Matplotlib'],
       highlights: ['Research Publication', 'Data Analysis', 'Predictive Models'],
       github: 'https://github.com/arjav1528/DigitalTwin',
-      featured: false,
-      icon: Database,
+      featured: true,
+      icon: ChartNetwork,
     },
+    {
+      title: "ClassSync",
+      description: 'A platform that enables BITS Goa students to upload their timetable screenshot and seamlessly sync their classes with Google Calendar.',
+      technologies: ['NextJS', 'GeminiAPI', 'NextAuth', 'Google Calendar API'],
+      highlights: ['Google Calendar Integration', 'AI Powered Timetable Parsing', 'Real-time Sync'],
+      github: 'https://github.com/arjav1528/ClassSync',
+      featured: true,
+      icon: Calendar,
+    },
+    {
+      title: 'GiftGenie - AI Gift Recommender',
+      description: '3rd Runner Up in the hackathon! An AI-powered gift recommendation system that analyzes user preferences and suggests personalized gifts. Built with React frontend and Flask backend, integrated with Gemini AI.',
+      technologies: ['React', 'Flask', 'Gemini AI', 'Python', 'Machine Learning'],
+      highlights: ['Hackathon 3rd Runner Up' ,'AI-Powered', '85% Accuracy'],
+      github: 'https://github.com/sohamdasx/GiftGenie',
+      featured: true,
+      icon: Bot,
+    },
+
   ];
 
   const containerVariants = {
@@ -97,43 +114,23 @@ export function ProjectsSection() {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/40 hover:border-primary/20">
-                <div className={`grid ${project.featured ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-0`}>
-                  {/* Project Image */}
-                  <div className="relative overflow-hidden">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4 }}
-                      className="aspect-video lg:aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 relative"
-                    >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      <div className="absolute top-4 left-4">
-                        <div className="w-10 h-10 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                          <project.icon className="h-5 w-5 text-primary" />
-                        </div>
-                      </div>
+
+                <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/40 hover:border-primary/20">
+                  <div className="grid lg:grid-cols-1 gap-0">
+                    {/* Project Content Only (Image removed) */}
+                    <div>
+                    <CardHeader className="pb-4">
                       {project.featured && (
-                        <div className="absolute top-4 right-4">
-                          <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
-                            Featured
-                          </Badge>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                            <project.icon className="h-5 w-5 text-primary" />
+                          </div>
+                          <span className="text-xl font-semibold"><CardTitle>{project.title}</CardTitle></span>
                         </div>
                       )}
-                    </motion.div>
-                  </div>
-
-                  {/* Project Content */}
-                  <div className={project.featured ? 'lg:col-span-1' : 'lg:col-span-2'}>
-                    <CardHeader className="pb-4">
-                      <CardTitle className="text-2xl mb-2">{project.title}</CardTitle>
                       <p className="text-muted-foreground leading-relaxed">
                         {project.description}
                       </p>
@@ -182,6 +179,7 @@ export function ProjectsSection() {
                         </Button>
                         
                       </div>
+                      
                     </CardContent>
                   </div>
                 </div>

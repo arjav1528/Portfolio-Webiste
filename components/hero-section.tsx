@@ -150,7 +150,7 @@ export function HeroSection() {
               {inView && (
                 <Typewriter
                   options={{
-                    strings: ['Flutter', 'React Native', 'NextJS', 'React', 'Flask', 'FastAPI', 'NodeJS', 'Python', 'Java'],
+                    strings: ['Flutter', 'React Native', 'NextJS', 'React', 'Flask', 'FastAPI', 'NodeJS', 'Python', 'Django'],
                     autoStart: true,
                     loop: true,
                     delay: 100,

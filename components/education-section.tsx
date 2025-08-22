@@ -29,7 +29,7 @@ export function EducationSection() {
       'Circuit Analysis',
     ],
     achievements: [
-      'App Development Head - Developers\' Society',
+      'App Development Head - Developers\' Society BITS Goa',
       'Lead Instructor - Center for Technical Education',
       'Multiple Hackathon Participations',
       'Research Publications in Renewable Energy',

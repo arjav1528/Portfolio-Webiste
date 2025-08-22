@@ -59,8 +59,8 @@ export function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-border/40 shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-background/40 backdrop-blur-xl border-b border-border/40 shadow-lg'
+          : 'bg-transparent backdrop-blur-xl'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,7 +148,7 @@ export function Navigation() {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md border-t border-border/40">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-background/30 backdrop-blur-xl border-t border-border/40">
                 {navigationItems.map((item, index) => (
                   <motion.a
                     key={item.name}
