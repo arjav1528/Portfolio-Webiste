@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Menu, X, Download, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navigationItems = [
   { name: 'Home', href: '#hero' },
@@ -43,15 +43,6 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleDownloadResume = () => {
-    const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
-    if (resumeUrl) {
-      window.open(resumeUrl, '_blank');
-    } else {
-      console.error('Resume URL not configured');
-    }
-  };
 
   return (
     <motion.nav
@@ -105,21 +96,6 @@ export function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Button
-                onClick={handleDownloadResume}
-                variant="outline"
-                size="sm"
-                className="group"
-              >
-                <ExternalLink className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
-                Resume
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
               <ThemeToggle />
             </motion.div>
           </div>
@@ -166,25 +142,6 @@ export function Navigation() {
                     {item.name}
                   </motion.a>
                 ))}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navigationItems.length * 0.1 }}
-                  className="px-3 py-2"
-                >
-                  <Button
-                    onClick={() => {
-                      handleDownloadResume();
-                      setIsOpen(false);
-                    }}
-                    variant="outline"
-                    size="sm"
-                    className="w-full group"
-                  >
-                    <Download className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
-                    Download Resume
-                  </Button>
-                </motion.div>
               </div>
             </motion.div>
           )}

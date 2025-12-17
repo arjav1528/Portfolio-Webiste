@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
+import { ResumePreview } from '@/components/resume-preview';
 
 export function HeroSection() {
   const { ref, inView } = useInView({
@@ -175,7 +176,7 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
           >
             <Button
               size="lg"
@@ -198,6 +199,14 @@ export function HeroSection() {
                 <ArrowDown className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
               </a>
             </Button>
+          </motion.div>
+
+          {/* Resume Preview Card */}
+          <motion.div
+            variants={itemVariants}
+            className="max-w-md mx-auto mb-12"
+          >
+            <ResumePreview />
           </motion.div>
 
           {/* Social Links */}
