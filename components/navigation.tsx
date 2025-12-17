@@ -64,9 +64,9 @@ export function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <a href="#hero" className="text-xl font-bold text-primary">
+            {/* <a href="#hero" className="text-xl font-bold text-primary">
               Arjav Patel
-            </a>
+            </a> */}
           </motion.div>
 
           {/* Desktop Navigation */}
