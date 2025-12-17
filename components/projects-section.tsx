@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github, Smartphone, Bot, ShoppingCart, ChartNetwork, Calendar } from 'lucide-react';
+import { Github, Smartphone, Bot, ShoppingCart, ChartNetwork, Calendar, Shield } from 'lucide-react';
 
 export function ProjectsSection() {
   const { ref, inView } = useInView({
@@ -14,6 +14,15 @@ export function ProjectsSection() {
   });
 
   const projects = [
+    {
+      title: 'Night Vigil - Goa Police Hackathon',
+      description: 'A platform that enables Goa Police to track and manage night vigils across the state. Built with Flutter, React, FaceNet, Python, and various APIs it allows police officers to track and manage night vigils across the state.',
+      technologies: ['Flutter', 'React', 'FaceNet', 'Python', 'REST APIs'],
+      highlights: ['Night Vigil Tracking', 'Police Management', 'State-wide Tracking', 'Face Recognition', 'Python', 'REST APIs'],
+      featured: true,
+      icon: Shield,
+      github: 'https://github.com/arjav1528/Night-Vigil-Goa-Police-Hackathon',
+    },
     {
       title: 'BITS Goa Fest Management App',
       description: 'Developed a scalable Flutter-based fest app for Waves, Quark, and Spree, streamlining event, pass, and schedule management for 3.5K+ users while securely handling ₹6M+ in payments through an integrated payment interface.',
