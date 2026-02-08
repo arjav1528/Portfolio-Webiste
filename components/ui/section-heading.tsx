@@ -43,9 +43,9 @@ export function SectionHeading({
         style={{ originX: align === "center" ? 0.5 : 0 }}
       />
       {subtitle && (
-        <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed mt-2">
+        <div className="text-lg text-muted-foreground max-w-2xl leading-relaxed mt-2">
           {subtitle}
-        </p>
+        </div>
       )}
     </motion.div>
   );

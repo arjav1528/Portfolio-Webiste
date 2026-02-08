@@ -2,9 +2,23 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
-import { SmoothCursor } from '@/components/ui/smooth-cursor';
+import { DM_Sans, Press_Start_2P } from 'next/font/google';
+import SmoothCursorClient from '@/components/SmoothCursorClient';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+const pressStart2P = Press_Start_2P({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-press-start',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: 'Arjav Patel',
   description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist with expertise in mobile development, React, and team leadership.',
   keywords: ['Flutter Developer', 'Mobile App Developer', 'React Developer', 'Senior Developer', 'BITS Pilani'],
@@ -25,12 +39,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${dmSans.variable} ${pressStart2P.variable}`}>
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-sans antialiased cursor-none">
-        <SmoothCursor />
+        <SmoothCursorClient />
         {children}
         <SpeedInsights />
         <Analytics />
