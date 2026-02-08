@@ -8,15 +8,13 @@ import { ResearchSection } from '@/components/research-section';
 import { EducationSection } from '@/components/education-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
-import ClickSpark from '@/components/reactbits/cursor';
 import { SmoothScrollWrapper } from '@/components/smooth-scroll-wrapper';
 import FloatingLines from '@/components/FloatingLines';
 
 export default function Home() {
   return (
     <SmoothScrollWrapper>
-      <ClickSpark>
-        <div className="relative min-h-screen">
+      <div className="relative min-h-screen">
           {/* FloatingLines background - full viewport, behind content */}
           <div
             className="fixed inset-0 -z-10"
@@ -48,7 +46,6 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-      </ClickSpark>
     </SmoothScrollWrapper>
   );
 }

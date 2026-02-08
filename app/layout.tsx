@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 export const metadata: Metadata = {
   title: 'Arjav Patel',
@@ -28,7 +29,8 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-pixelify antialiased">
+      <body className="font-pixelify antialiased cursor-none">
+        <SmoothCursor />
         {children}
         <SpeedInsights />
         <Analytics />

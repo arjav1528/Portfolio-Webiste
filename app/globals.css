@@ -37,6 +37,8 @@
 @layer base {
   * {
     @apply border-border;
+    /* Disable pointer cursor everywhere – always show default arrow */
+    cursor: none !important;
   }
   body {
     @apply text-foreground font-pixelify;

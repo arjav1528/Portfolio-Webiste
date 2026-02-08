@@ -69,7 +69,7 @@ export function Navigation() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 cursor-none">
             {navigationItems.map((item, index) => (
               <motion.a
                 key={item.name}
