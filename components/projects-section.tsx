@@ -12,6 +12,7 @@ import {
   ChartNetwork,
   Calendar,
   Shield,
+  Building,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { AnimatedGradientBorder } from "@/components/ui/animated-gradient-border";
@@ -24,6 +25,16 @@ export function ProjectsSection() {
   });
 
   const projects = [
+    {
+      title: "BPGC One",
+      description:
+        "A platform that enables BITS Pilani Goa Campus to track and manage their students and events. Built with Flutter, Supabase, Edge Functions, and RLS Policies.",
+      technologies: ["Flutter", "Firebase", "Node.js"],
+      highlights: ["Student Tracking", "Event Management", "Task Management"],
+      featured: true,
+      icon: Building,
+      github: "https://github.com/Devsoc-BPGC/BPGC-One-Flutter",
+    },
     {
       title: "Night Vigil - Goa Police Hackathon",
       description:

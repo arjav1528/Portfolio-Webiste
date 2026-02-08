@@ -20,12 +20,12 @@ const pressStart2P = Press_Start_2P({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: 'Arjav Patel',
-  description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist with expertise in mobile development, React, and team leadership.',
+  description: 'Portfolio of Arjav Patel, SDE Intern @ TechStaX with expertise in mobile development, React, and team leadership.',
   keywords: ['Flutter Developer', 'Mobile App Developer', 'React Developer', 'Senior Developer', 'BITS Pilani'],
   authors: [{ name: 'Arjav Patel' }],
   openGraph: {
     title: 'Arjav Patel - Senior Application Developer & Flutter Specialist',
-    description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist',
+    description: 'Portfolio of Arjav Patel, SDE Intern @ TechStaX',
     type: 'website',
   },
   icons: {
