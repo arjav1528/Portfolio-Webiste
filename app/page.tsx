@@ -9,6 +9,7 @@ const AboutSection = dynamic(() => import('@/components/about-section').then((m)
 const SkillsSection = dynamic(() => import('@/components/skills-section').then((m) => m.SkillsSection), { ssr: true });
 const ExperienceSection = dynamic(() => import('@/components/experience-section').then((m) => m.ExperienceSection), { ssr: true });
 const ProjectsSection = dynamic(() => import('@/components/projects-section').then((m) => m.ProjectsSection), { ssr: true });
+const OpenSourceSection = dynamic(() => import('@/components/open-source-section').then((m) => m.OpenSourceSection), { ssr: true });
 const ResearchSection = dynamic(() => import('@/components/research-section').then((m) => m.ResearchSection), { ssr: true });
 const EducationSection = dynamic(() => import('@/components/education-section').then((m) => m.EducationSection), { ssr: true });
 const ContactSection = dynamic(() => import('@/components/contact-section').then((m) => m.ContactSection), { ssr: true });
@@ -32,6 +33,7 @@ export default function Home() {
             <SkillsSection />
             <ExperienceSection />
             <ProjectsSection />
+            <OpenSourceSection />
             <ResearchSection />
             <EducationSection />
             <ContactSection />

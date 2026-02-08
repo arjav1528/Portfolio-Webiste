@@ -19,6 +19,7 @@ const navItems = [
   { name: "Skills", link: "#skills" },
   { name: "Experience", link: "#experience" },
   { name: "Projects", link: "#projects" },
+  { name: "Open Source", link: "#open-source" },
   { name: "Research", link: "#research" },
   { name: "Education", link: "#education" },
   { name: "Contact", link: "#contact" },
