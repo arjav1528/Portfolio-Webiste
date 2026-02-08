@@ -196,7 +196,7 @@ export function ContactSection() {
             </div>
 
             {/* Availability */}
-            <div className="p-4 bg-muted/30 rounded-lg">
+            <div className="p-4  rounded-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <Badge variant="secondary" className="bg-green-500/10 text-green-700 dark:text-green-400">

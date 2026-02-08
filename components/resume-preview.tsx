@@ -176,7 +176,7 @@ export function ResumePreview() {
             </div>
           </DialogHeader>
           
-          <div className="relative w-full h-[calc(90vh-120px)] overflow-hidden bg-muted/30">
+          <div className="relative w-full h-[calc(90vh-120px)] overflow-hidden ">
             <AnimatePresence mode="wait">
               {isOpen && (
                 <motion.div
