@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-pixelify antialiased cursor-none">
+      <body className="font-sans antialiased cursor-none">
         <SmoothCursor />
         {children}
         <SpeedInsights />

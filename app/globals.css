@@ -32,6 +32,10 @@
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
   --radius: 0.5rem;
+  /* Gradient accents for Magic UI / Aceternity */
+  --gradient-start: 217 91% 60%;
+  --gradient-mid: 263 70% 58%;
+  --gradient-end: 330 81% 60%;
 }
 
 @layer base {
@@ -41,7 +45,21 @@
     cursor: none !important;
   }
   body {
-    @apply text-foreground font-pixelify;
+    @apply text-foreground font-sans antialiased;
     background: transparent;
   }
+  /* Section content areas: readable over animated background */
+  section .content-backdrop {
+    @apply bg-background/80 backdrop-blur-sm rounded-2xl;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  @apply bg-violet-500/30 text-foreground;
 }

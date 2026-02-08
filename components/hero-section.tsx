@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
-import Typewriter from 'typewriter-effect';
-import Image from 'next/image';
-import { ResumePreview } from '@/components/resume-preview';
-import Shuffle from '@/components/Shuffle';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import Typewriter from "typewriter-effect";
+import Image from "next/image";
+import { ResumePreview } from "@/components/resume-preview";
+import Shuffle from "@/components/Shuffle";
+import { Spotlight } from "@/components/ui/spotlight";
+import { AnimatedGradientBorder } from "@/components/ui/animated-gradient-border";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 export function HeroSection() {
   const { ref, inView } = useInView({
@@ -20,27 +23,39 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.04, 0.62, 0.23, 0.98],
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Aceternity-style spotlight */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+        <Spotlight
+          className="-top-40 left-0 md:left-60"
+          fill="rgb(139 92 246 / 0.15)"
+        />
+      </div>
+      <DotPattern className="opacity-60" color="rgb(255 255 255 / 0.04)" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -48,50 +63,27 @@ export function HeroSection() {
           animate={inView ? "visible" : "hidden"}
           className="text-center"
         >
-          {/* Professional Photo */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-8"
-          >
-            <div className="relative inline-block">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="group w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 relative"
-              >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 group-hover:animate-ripple" />
-                <style jsx>{`
-                  @keyframes ripple {
-                    from {
-                      opacity: 0.5;
-                      transform: scale(1);
-                    }
-                    to {
-                      opacity: 0;
-                      transform: scale(1.5);
-                    }
-                  }
-                  .animate-ripple {
-                    animation: ripple 1s ease-out infinite;
-                  }
-                `}</style>
-                <div className="w-full h-full rounded-full overflow-hidden relative z-10 bg-background">
-                  <Image
-                    src="/photo.jpg"
-                    alt="Arjav Patel"
-                    width={160}
-                    height={160}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
+          {/* Avatar with animated border */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <AnimatedGradientBorder
+              className="w-36 h-36 sm:w-44 sm:h-44 mx-auto rounded-full p-[3px] overflow-hidden"
+              innerClassName="rounded-full overflow-hidden w-full h-full"
+            >
+              <div className="relative w-full h-full rounded-full bg-background">
+                <Image
+                  src="/photo.jpg"
+                  alt="Arjav Patel"
+                  width={176}
+                  height={176}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </AnimatedGradientBorder>
           </motion.div>
 
-          {/* Name and Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-press-start"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-4 font-press-start"
           >
             <Shuffle
               text="Arjav Patel"
@@ -107,50 +99,59 @@ export function HeroSection() {
               respectReducedMotion={true}
               loop={false}
               loopDelay={0}
-              className="font-press-start text-5xl sm:text-6xl lg:text-7xl"
-            >
-            </Shuffle>
+              className="font-press-start text-4xl sm:text-5xl lg:text-7xl"
+            />
           </motion.h1>
 
           <motion.div
             variants={itemVariants}
-            className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-6 min-h-[2.5rem] flex items-center justify-center"
+            className="text-lg sm:text-xl lg:text-2xl font-medium text-muted-foreground mb-4 min-h-[2rem] flex items-center justify-center flex-wrap gap-x-2"
           >
-            <span className="mr-2">Specializing in</span>
-            <span className="text-primary">
+            <span>Specializing in</span>
+            <span className="text-primary font-semibold">
               {inView && (
                 <Typewriter
                   options={{
-                    strings: ['Flutter', 'React Native', 'NextJS', 'React', 'Flask', 'FastAPI', 'NodeJS', 'Python', 'Django'],
+                    strings: [
+                      "Flutter",
+                      "React Native",
+                      "Next.js",
+                      "React",
+                      "Flask",
+                      "FastAPI",
+                      "Node.js",
+                      "Python",
+                      "Django",
+                    ],
                     autoStart: true,
                     loop: true,
-                    delay: 100,
-                    deleteSpeed: 50,
-                    cursor: '|',
-                    wrapperClassName: 'text-primary'
+                    delay: 80,
+                    deleteSpeed: 40,
+                    cursor: "|",
+                    wrapperClassName: "text-primary",
                   }}
                 />
               )}
             </span>
           </motion.div>
 
-          {/* Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            Crafting exceptional mobile and web experiences with modern technologies. 
-            Leading teams to build innovative solutions that make a difference.
+            Crafting exceptional mobile and web experiences with modern
+            technologies. Leading teams to build solutions that make a
+            difference.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTAs with shadcn + Magic UI style */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
           >
             <Button
               size="lg"
-              className="group px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group px-8 py-6 text-base font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300"
               asChild
             >
               <a href="#contact">
@@ -161,7 +162,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="group px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group px-8 py-6 text-base font-semibold rounded-xl border-2 border-white/20 hover:border-primary/50 hover:bg-white/5 transition-all duration-300"
               asChild
             >
               <a href="#projects">
@@ -171,41 +172,48 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Resume Preview Card */}
-          <motion.div
-            variants={itemVariants}
-            className="max-w-md mx-auto mb-12"
-          >
+          {/* Resume card - prominent and interactive */}
+          <motion.div variants={itemVariants} className="max-w-md mx-auto mb-12">
             <ResumePreview />
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social links with hover states */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center space-x-6"
+            className="flex justify-center gap-4"
           >
             {[
-              { icon: Github, href: 'https://github.com/arjav1528', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/arjav1528', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:arjav1528@gmail.com', label: 'Email' },
+              {
+                icon: Github,
+                href: "https://github.com/arjav1528",
+                label: "GitHub",
+              },
+              {
+                icon: Linkedin,
+                href: "https://linkedin.com/in/arjav1528",
+                label: "LinkedIn",
+              },
+              {
+                icon: Mail,
+                href: "mailto:arjav1528@gmail.com",
+                label: "Email",
+              },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -2 }}
+                whileHover={{ scale: 1.1, y: -4 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border/40 text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+                aria-label={label}
               >
                 <Icon className="h-6 w-6" />
-                <span className="sr-only">{label}</span>
               </motion.a>
             ))}
           </motion.div>
         </motion.div>
-
-        
       </div>
     </section>
   );

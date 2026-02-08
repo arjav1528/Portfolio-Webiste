@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { FileText, Download, ExternalLink } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { FileText, Download, ExternalLink } from "lucide-react";
+import { AnimatedGradientBorder } from "@/components/ui/animated-gradient-border";
 
 export function ResumePreview() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,46 +21,35 @@ export function ResumePreview() {
     triggerOnce: true,
   });
 
-  const resumeUrl = '/Arjav_Patel_Final_Resume.pdf';
+  const resumeUrl = "/Arjav_Patel_Final_Resume.pdf";
 
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = 'Arjav_Patel_Resume.pdf';
+    link.download = "Arjav_Patel_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const handleOpenInNewTab = () => {
-    window.open(resumeUrl, '_blank');
+    window.open(resumeUrl, "_blank");
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.8,
-      y: 50,
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+      y: 24,
     },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.04, 0.62, 0.23, 0.98],
-        delay: 0.3,
-      },
-    },
-  };
-
-  const hoverVariants = {
-    hover: {
-      scale: 1.05,
-      y: -8,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        delay: 0.2,
       },
     },
   };
@@ -72,119 +61,109 @@ export function ResumePreview() {
         variants={cardVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        whileHover={hoverVariants.hover}
+        whileHover={{ y: -6 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="relative"
       >
-        <Card 
-          className="group cursor-pointer overflow-hidden border-border/40 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-2xl bg-gradient-to-br from-background to-muted/20"
-          onClick={() => setIsOpen(true)}
+        <AnimatedGradientBorder
+          className="cursor-pointer h-full group"
+          innerClassName="p-6 h-full"
         >
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-4">
-              {/* Animated Icon */}
-              <motion.div
-                animate={{
-                  rotate: [0, 10, -10, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut",
-                }}
-                className="flex-shrink-0"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <FileText className="h-8 w-8 text-white" />
-                </div>
-              </motion.div>
-
-              {/* Content */}
-              <div className="flex-1 min-w-0">
-                <motion.h3
-                  className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors"
-                >
-                  View My Resume
-                </motion.h3>
-                <motion.p
-                  className="text-sm text-muted-foreground"
-                >
-                  Click to preview or download
-                </motion.p>
+          <div
+            className="flex items-center gap-4"
+            onClick={() => setIsOpen(true)}
+            onKeyDown={(e) => e.key === "Enter" && setIsOpen(true)}
+            role="button"
+            tabIndex={0}
+            aria-label="Open resume preview"
+          >
+            <motion.div
+              animate={{
+                rotate: [0, 5, -5, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 4,
+                ease: "easeInOut",
+              }}
+              className="flex-shrink-0"
+            >
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
+                <FileText className="h-8 w-8 text-white" />
               </div>
+            </motion.div>
 
-              {/* Arrow Icon */}
-              <motion.div
-                animate={{
-                  x: [0, 5, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="flex-shrink-0"
-              >
-                <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </motion.div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                View My Resume
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Click to preview or download
+              </p>
             </div>
 
-            {/* Animated Border Gradient */}
             <motion.div
-              className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              style={{ originX: 0 }}
-            />
-          </CardContent>
-        </Card>
+              animate={{ x: [0, 4, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="flex-shrink-0"
+            >
+              <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            </motion.div>
+          </div>
+        </AnimatedGradientBorder>
       </motion.div>
 
-      {/* PDF Preview Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden">
-          <DialogHeader className="px-6 pt-6 pb-4 border-b">
-            <div className="flex items-center justify-between">
+        <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden border-white/10 bg-background/95 backdrop-blur-xl">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <DialogTitle className="text-2xl font-bold font-press-start">Resume Preview</DialogTitle>
-                <DialogDescription className="mt-1">
+                <DialogTitle className="text-2xl font-bold font-press-start">
+                  Resume Preview
+                </DialogTitle>
+                <DialogDescription className="mt-1 text-muted-foreground">
                   Arjav Patel - Software Engineer & Mobile Developer
                 </DialogDescription>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={handleOpenInNewTab}
-                  className="group"
+                  className="rounded-lg border-white/20 hover:bg-white/5"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                  <ExternalLink className="h-4 w-4 mr-2" />
                   Open Full
                 </Button>
                 <Button
-                  variant="default"
                   size="sm"
                   onClick={handleDownload}
-                  className="group"
+                  className="rounded-lg bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500"
                 >
-                  <Download className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                  <Download className="h-4 w-4 mr-2" />
                   Download
                 </Button>
               </div>
             </div>
           </DialogHeader>
-          
-          <div className="relative w-full h-[calc(90vh-120px)] overflow-hidden ">
+
+          <div className="relative w-full h-[calc(90vh-120px)] overflow-hidden">
             <AnimatePresence mode="wait">
               {isOpen && (
                 <motion.div
                   key="pdf-preview"
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  initial={{ opacity: 0, scale: 0.98, y: 16 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  exit={{ opacity: 0, scale: 0.98, y: 16 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                   className="w-full h-full"
                 >
                   <iframe
@@ -201,4 +180,3 @@ export function ResumePreview() {
     </>
   );
 }
-

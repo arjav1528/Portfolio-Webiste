@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
         pixelify: ['"Pixelify Sans"', 'cursive'],
         'press-start': ['"Press Start 2P"', 'cursive'],
       },
@@ -82,10 +83,39 @@ const config: Config = {
             height: '0',
           },
         },
+        'gradient-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        spotlight: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0.3' },
+          '100%': { opacity: '0.2' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        glow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.4)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-shift': 'gradient-shift 4s ease infinite',
+        spotlight: 'spotlight 8s ease-in-out infinite',
+        shimmer: 'shimmer 2s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.6s ease-out',
+        glow: 'glow 3s ease-in-out infinite',
+      },
+      backgroundSize: {
+        '200': '200% 200%',
       },
     },
   },

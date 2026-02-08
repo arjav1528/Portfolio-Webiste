@@ -33,7 +33,7 @@ export default function Home() {
           </div>
           <div className="relative min-h-screen">
             <Navigation />
-            <main>
+            <main className="pt-16">
               <HeroSection />
               <AboutSection />
               <SkillsSection />

@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { DotPattern } from '@/components/ui/dot-pattern';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
 export function ExperienceSection() {
@@ -104,22 +106,17 @@ export function ExperienceSection() {
   };
 
   return (
-    <section id="experience" className="py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-press-start">
-            Professional <span className="text-primary">Experience</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            My journey through various roles in software development, from internships to leadership positions.
-          </p>
-        </motion.div>
+    <section id="experience" className="relative py-24 overflow-hidden">
+      <DotPattern className="opacity-40" color="rgb(255 255 255 / 0.03)" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          title={
+            <>
+              Professional <span className="text-primary">Experience</span>
+            </>
+          }
+          subtitle="My journey through various roles in software development, from internships to leadership positions."
+        />
 
         <motion.div
           ref={ref}
@@ -129,7 +126,7 @@ export function ExperienceSection() {
           className="relative"
         >
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-500 hidden lg:block" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 via-violet-500 to-fuchsia-500 hidden lg:block" />
 
           <div className="space-y-8">
             {experiences.map((experience, index) => (
@@ -141,21 +138,21 @@ export function ExperienceSection() {
                 } gap-8`}
               >
                 {/* Timeline Node */}
-                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg z-10" />
+                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-background shadow-lg z-10 bg-gradient-to-br from-blue-500 via-violet-500 to-fuchsia-500" />
 
                 {/* Content Card */}
                 <div className={`flex-1 max-w-xl ${index % 2 === 0 ? 'lg:text-right lg:pr-8' : 'lg:text-left lg:pl-8'}`}>
-                  <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border-border/40 hover:border-primary/20">
+                  <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-primary/30 bg-background/80 backdrop-blur-sm">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                           <div className="flex items-center gap-2 mb-2">
                             <Briefcase className="h-4 w-4 text-primary" />
-                            <Badge variant={experience.current ? "default" : "secondary"} className="text-xs">
+                            <Badge variant="secondary" className="text-xs border border-white/10 hover:border-primary/30">
                               {experience.type}
                             </Badge>
                             {experience.current && (
-                              <Badge variant="default" className="text-xs bg-green-500 hover:bg-green-600">
+                              <Badge variant="default" className="text-xs">
                                 Current
                               </Badge>
                             )}
@@ -183,7 +180,7 @@ export function ExperienceSection() {
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">
+                          <Badge key={tech} variant="secondary" className="text-xs border border-white/10 hover:border-primary/30">
                             {tech}
                           </Badge>
                         ))}
