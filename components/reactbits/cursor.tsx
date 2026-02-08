@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useEffect, useCallback } from "react";
-import { useTheme } from "next-themes";
 
 interface ClickSparkProps {
   sparkColor?: string;
@@ -31,7 +30,6 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   extraScale = 1.0,
   children
 }) => {
-  const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const startTimeRef = useRef<number | null>(null);
@@ -94,11 +92,8 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
 
     let animationId: number;
 
-    // Theme-based spark color
-    let resolvedSparkColor = sparkColor;
-    if (!resolvedSparkColor) {
-      resolvedSparkColor = theme === "dark" ? "#ffffff" : "#2563eb"; // white for dark, blue for light
-    }
+    // Dark mode spark color
+    const resolvedSparkColor = sparkColor ?? "#ffffff";
 
     const draw = (timestamp: number) => {
       if (!startTimeRef.current) {
@@ -141,7 +136,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, [sparkColor, theme, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
+  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     const canvas = canvasRef.current;
