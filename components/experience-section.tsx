@@ -112,7 +112,7 @@ export function ExperienceSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-press-start">
             Professional <span className="text-primary">Experience</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6" />

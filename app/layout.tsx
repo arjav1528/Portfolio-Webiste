@@ -1,10 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Arjav Patel',
@@ -29,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
       </head>
-      <body className={inter.className}>
+      <body className="font-pixelify antialiased">
         {children}
         <SpeedInsights />
         <Analytics />

@@ -412,8 +412,8 @@ const Shuffle: React.FC<ShuffleProps> = ({
   );
 
   const classes = useMemo(
-    () => `${baseTw} ${className}`.trim(),
-    [baseTw, className]
+    () => `${baseTw} ${ready ? 'visible' : 'invisible'} ${className}`.trim(),
+    [baseTw, ready, className]
   );
   const Tag = (tag || 'p') as keyof JSX.IntrinsicElements;
 

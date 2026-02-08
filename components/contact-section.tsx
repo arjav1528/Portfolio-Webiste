@@ -121,7 +121,7 @@ export function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-press-start">
             Get In <span className="text-primary">Touch</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6" />
@@ -140,7 +140,7 @@ export function ContactSection() {
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-6 font-press-start">
                 Let's Connect
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">

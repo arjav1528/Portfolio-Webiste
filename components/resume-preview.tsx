@@ -148,7 +148,7 @@ export function ResumePreview() {
           <DialogHeader className="px-6 pt-6 pb-4 border-b">
             <div className="flex items-center justify-between">
               <div>
-                <DialogTitle className="text-2xl font-bold">Resume Preview</DialogTitle>
+                <DialogTitle className="text-2xl font-bold font-press-start">Resume Preview</DialogTitle>
                 <DialogDescription className="mt-1">
                   Arjav Patel - Software Engineer & Mobile Developer
                 </DialogDescription>

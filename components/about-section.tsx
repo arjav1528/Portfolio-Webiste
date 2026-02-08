@@ -85,7 +85,7 @@ export function AboutSection() {
             <div>
               <motion.h2
                 variants={slideInLeft}
-                className="text-3xl sm:text-4xl font-bold text-foreground mb-4"
+                className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-press-start"
               >
                 About <span className="text-primary">Me</span>
               </motion.h2>

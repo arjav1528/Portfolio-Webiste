@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'sour-gummy': ['"Sour Gummy"', 'cursive'],
+        pixelify: ['"Pixelify Sans"', 'cursive'],
+        'press-start': ['"Press Start 2P"', 'cursive'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

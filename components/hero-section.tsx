@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import { ResumePreview } from '@/components/resume-preview';
+import Shuffle from '@/components/Shuffle';
 
 export function HeroSection() {
   const { ref, inView } = useInView({
@@ -90,11 +91,25 @@ export function HeroSection() {
           {/* Name and Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-sour-gummy"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-press-start"
           >
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Arjav Patel
-            </span>
+            <Shuffle
+              text="Arjav Patel"
+              shuffleDirection="right"
+              duration={0.35}
+              animationMode="evenodd"
+              shuffleTimes={1}
+              ease="power3.out"
+              stagger={0.03}
+              threshold={0.1}
+              triggerOnce={true}
+              triggerOnHover
+              respectReducedMotion={true}
+              loop={false}
+              loopDelay={0}
+              className="font-press-start text-5xl sm:text-6xl lg:text-7xl"
+            >
+            </Shuffle>
           </motion.h1>
 
           <motion.div
