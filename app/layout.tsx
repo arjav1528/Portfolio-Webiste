@@ -1,48 +1,26 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
-
-const inter = Inter({ subsets: ['latin'] });
-
+import type { Metadata } from "next";
+import "@fontsource-variable/syne";
+import "@fontsource-variable/space-grotesk";
+import "./globals.css";
+import { MotionPreferences } from "@/components/effects/motion-preferences";
 export const metadata: Metadata = {
-  title: 'Arjav Patel',
-  description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist with expertise in mobile development, React, and team leadership.',
-  keywords: ['Flutter Developer', 'Mobile App Developer', 'React Developer', 'Senior Developer', 'BITS Pilani'],
-  authors: [{ name: 'Arjav Patel' }],
+  title: "Arjav Patel — Ideas. Code. Impact.",
+  description:
+    "Software engineer, mobile developer, and open-source contributor. Explore Arjav Patel’s work across Showpad, Flutter, Next.js, Apache, and BITS Goa.",
   openGraph: {
-    title: 'Arjav Patel - Senior Application Developer & Flutter Specialist',
-    description: 'Portfolio of Arjav Patel, Senior Application Developer and Flutter Specialist',
-    type: 'website',
+    title: "Arjav Patel — Ideas. Code. Impact.",
+    description: "Big ideas. Thoughtful code. Things people actually use.",
+    type: "website",
   },
-  icons: {
-    shortcut: '/favicon.png',
-  },
+  robots: { index: true, follow: true },
 };
-
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet" />
-      </head>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-        </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
+    <html lang="en">
+      <body>
+        <MotionPreferences>{children}</MotionPreferences>
       </body>
     </html>
   );

@@ -1,0 +1,6 @@
+# This file is an expression consumed directly by the Playwright MCP runner.
+scripts/browser-check.js
+scripts/interactions-check.js
+app/icon.svg
+out/
+.next/

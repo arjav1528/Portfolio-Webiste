@@ -1,0 +1,212 @@
+{
+  "projects": [
+    {
+      "id": "fest",
+      "name": "One campus. Three festivals.",
+      "title": "BITS Goa Fest Management App",
+      "category": "Mobile",
+      "tone": "lime",
+      "visual": "festival",
+      "description": "Events, passes, schedules, and secure payments for Waves, Quark, and Spree. Built for 3,500+ campus users, handling ₹10M+ in payments.",
+      "stack": ["Flutter", "Firebase", "Node.js", "REST APIs"],
+      "badge": "Out in the world",
+      "url": "https://play.google.com/store/apps/details?id=club.devsoc.waves23",
+      "linkLabel": "View on Google Play"
+    },
+    {
+      "id": "commitcut",
+      "name": "Good commits. Fair splits.",
+      "title": "CommitCut",
+      "category": "Web",
+      "tone": "magenta",
+      "visual": "commits",
+      "description": "A fairer way to split hackathon prizes. Weighted GitHub contributions, instant client-side rescoring, contributor exclusions, and shareable results—with validated inputs and request protection.",
+      "stack": ["Next.js", "TypeScript", "GitHub API"],
+      "badge": "Built for builders",
+      "url": "https://github.com/arjav1528/CommitCut",
+      "linkLabel": "Explore the code"
+    },
+    {
+      "id": "registration",
+      "name": "Less admin. More learning.",
+      "title": "BITS Course-Registration Portal",
+      "category": "Web",
+      "tone": "cream",
+      "visual": "registration",
+      "description": "An eight-page admin portal backed by a 15-table Postgres schema and row-level security. Cloud functions handle passcodes, face detection, and transactional email.",
+      "stack": [
+        "Flutter",
+        "Next.js",
+        "Supabase",
+        "AWS Rekognition",
+        "Brevo SMTP"
+      ],
+      "badge": "Campus infrastructure",
+      "url": "https://github.com/arjav1528/Simplified-Reg-Portal-Copy",
+      "linkLabel": "Explore the code"
+    },
+    {
+      "id": "night-vigil",
+      "name": "Accountability after dark.",
+      "title": "Night Vigil · Goa Police Hackathon",
+      "category": "AI & data",
+      "tone": "cobalt",
+      "visual": "radar",
+      "description": "A 48-hour patrol-verification build with geofenced check-ins, facial verification, continuous location tracking, alerts, and automated duty-compliance reporting.",
+      "stack": ["Flutter", "React", "FastAPI", "FaceNet", "AWS"],
+      "badge": "48-hour build",
+      "url": "https://github.com/arjav1528/Night-Vigil-Goa-Police-Hackathon",
+      "linkLabel": "Explore the code"
+    },
+    {
+      "id": "classsync",
+      "name": "Screenshot. Sync. Sorted.",
+      "title": "ClassSync",
+      "category": "AI & data",
+      "tone": "silver",
+      "visual": "calendar",
+      "description": "Turn a BITS Goa timetable screenshot into a Google Calendar schedule with AI-powered parsing, authentication, and calendar sync.",
+      "stack": ["Next.js", "Gemini API", "NextAuth", "Google Calendar API"],
+      "badge": "Tiny tool. Big relief.",
+      "url": "https://github.com/arjav1528/ClassSync",
+      "linkLabel": "Explore the code"
+    },
+    {
+      "id": "swd",
+      "name": "Campus merch, connected.",
+      "title": "Student Welfare Division · SWD Store",
+      "category": "Web",
+      "tone": "lime",
+      "visual": "store",
+      "description": "One storefront for BITS Goa clubs and departments to sell merchandise, with a clean student shopping experience and secure database integration.",
+      "stack": ["Python", "Django", "MongoDB", "HTML/CSS"],
+      "badge": "Made for campus",
+      "url": "https://github.com/arjav1528/swd_django",
+      "linkLabel": "Explore the code"
+    },
+    {
+      "id": "giftgenie",
+      "name": "A little less gift-guessing.",
+      "title": "GiftGenie",
+      "category": "AI & data",
+      "tone": "cream",
+      "visual": "gift",
+      "description": "Personalized gift recommendations from user preferences, powered by Gemini AI. Built with a React frontend and Flask backend; hackathon 3rd runner-up.",
+      "stack": ["React", "Flask", "Gemini AI", "Python", "Machine Learning"],
+      "badge": "Hackathon 3rd runner-up",
+      "url": "https://github.com/sohamdasx/GiftGenie",
+      "linkLabel": "Explore the code"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Showpad",
+      "role": "Software Engineering Intern",
+      "period": "Jul — Dec 2026",
+      "description": "Contributing to AI-powered search and content-sharing expiry controls, alongside glossary and pronunciation improvements for AI roleplay.",
+      "tags": ["AI-powered search", "Content sharing", "AI roleplay"]
+    },
+    {
+      "company": "TechStaX",
+      "role": "Software Engineering Intern",
+      "period": "Jan — Mar 2026",
+      "description": "Reduced memory leaks and app size from 123.1 MB to 65 MB. Built real-time chat and video calling with Supabase.",
+      "tags": ["App performance", "Supabase", "Real-time communication"]
+    },
+    {
+      "company": "Nudron IoT Solutions",
+      "role": "Software Engineering Intern",
+      "period": "Aug — Dec 2025",
+      "description": "Refreshed a Flutter app’s UI, unified iOS, Android, Windows, and macOS functionality, and reduced unnecessary widget rebuilds.",
+      "tags": ["Flutter", "Bloc", "Cross-platform", "Postman"]
+    },
+    {
+      "company": "Developers’ Society, BITS Goa",
+      "role": "App Development Head",
+      "period": "May 2025 — Apr 2026",
+      "description": "Led 50+ junior and 10 senior developers, maintained 4+ campus applications, and co-designed Intro to Flutter with CTE for 30+ students and four structured assignments.",
+      "tags": ["Leadership", "Architecture", "Mentoring", "BPGC One"]
+    },
+    {
+      "company": "Pragati One",
+      "role": "Senior Flutter Intern",
+      "period": "Dec 2024 — Jan 2025",
+      "description": "Developed Flutter applications with a focus on performance, mobile user experience, and UI consistency.",
+      "tags": ["Flutter", "Dart", "UI/UX"]
+    },
+    {
+      "company": "Center for Technical Education",
+      "role": "Lead Instructor",
+      "period": "Aug — Nov 2024",
+      "description": "Designed and delivered mobile-development courses, taught modern programming practices, and mentored students through practical projects.",
+      "tags": ["Teaching", "Flutter", "Mentorship"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Apps & interfaces",
+      "items": [
+        "Flutter",
+        "Dart",
+        "React",
+        "Next.js",
+        "React Native",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "HTML/CSS",
+        "Bloc"
+      ]
+    },
+    {
+      "name": "Backends & data",
+      "items": [
+        "Node.js",
+        "Python",
+        "Django",
+        "Flask",
+        "FastAPI",
+        "REST APIs",
+        "Firebase",
+        "Supabase",
+        "PostgreSQL",
+        "MongoDB"
+      ]
+    },
+    {
+      "name": "AI, systems & tools",
+      "items": [
+        "C",
+        "C23",
+        "CMake",
+        "Kconfig",
+        "AWS",
+        "FaceNet",
+        "Gemini API",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Scikit-learn",
+        "Git",
+        "GitHub",
+        "Postman",
+        "VS Code",
+        "Android Studio"
+      ]
+    },
+    {
+      "name": "Beyond the code",
+      "items": [
+        "Team leadership",
+        "Mentoring",
+        "Teaching",
+        "Project management",
+        "Communication",
+        "Problem solving",
+        "Analytical thinking",
+        "Mathematical modeling",
+        "Circuit design"
+      ]
+    }
+  ]
+}

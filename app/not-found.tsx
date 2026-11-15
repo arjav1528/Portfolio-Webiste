@@ -1,15 +1,15 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useWindowSize } from '@/hooks/useWindowSize';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-
 export default function NotFound() {
-  const router = useRouter();
-  
-  useEffect(() => {
-    router.push('/');
-  }, [router]);
+  return (
+    <main className="shell section-pad">
+      <p className="eyebrow">404 / A little off course</p>
+      <h1 style={{ fontSize: "clamp(50px, 9vw, 120px)", marginBottom: 30 }}>
+        Not here.
+        <br />
+        Still curious?
+      </h1>
+      <a className="button lime" href="/">
+        Back to the portfolio ↗
+      </a>
+    </main>
+  );
 }
