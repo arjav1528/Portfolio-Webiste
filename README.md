@@ -29,9 +29,13 @@ For browser regression checks, `scripts/browser-check.js` contains a Playwright 
 
 The portrait uses 3D pointer tilt and a color reveal. Project cards follow the pointer with a spotlight, and filter changes use spring/layout motion. Main CTAs are magnetic with sliding text; filters ripple on click; the hero headline briefly decrypts on hover. A layered press button copies the email address with success and error feedback. A top-edge progress bar tracks the page.
 
+Headings, cards, and experience rows fade and rise into view once, with a short stagger for groups. The desktop hero collage drifts gently as you scroll. These effects share the motion controls; keyboard focus reveals content immediately, and everything remains readable without JavaScript. Mobile keeps the collage still.
+
 Adapted React Bits, Magic UI, Kokonut UI, and Uiverse components are documented in [component sources](docs/component-sources.md), with retained licenses. Decorative motion respects both the OS preference and the footer pause button. Hover effects do not capture touch scrolling.
 
 `scripts/interactions-check.js` is a second Playwright page function covering the effects, keyboard ripple placement, disabled-motion states, touch fallback, and clipboard success/failure. Clipboard calls are mocked during tests so the user's clipboard is untouched.
+
+`scripts/viewport-check.js` covers scroll reveals, staggered entry, parallax, keyboard focus, pause/reduced-motion cancellation, mobile layout, and content visibility without JavaScript.
 
 ## Editing
 

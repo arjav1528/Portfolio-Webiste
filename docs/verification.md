@@ -17,3 +17,11 @@ External destination availability and the historical achievement metrics were no
 ## Interaction update
 
 The production static export also passed both Playwright page functions on a temporary port (4173), with no browser runtime errors. New checks cover portrait tilt, magnetic CTAs, decryption settling, pointer spotlights, click and keyboard-centered ripples, global pause, OS reduced motion, touch fallback, clipboard success/failure, and scroll progress. Build, TypeScript, and all four content checks passed again. The temporary preview and test browser were closed afterward.
+
+## Scroll and viewport update
+
+The production build, TypeScript, four content checks, and all three Playwright page functions passed. The new viewport check verifies scroll-linked hero movement, first-entry reveals, staggered cards, no replay on re-entry, immediate visibility for keyboard focus, and cancellation through both reduced motion and the pause button. It also checks the stationary mobile collage, horizontal overflow, and readable content with JavaScript disabled. No browser runtime errors occurred. The existing seven-width layout and interaction checks passed again.
+
+Browser checks ran in desktop Chrome with simulated mobile viewports; physical mobile devices and Safari were not tested. No npm processes were started for these checks.
+
+After moving the portfolio to the existing repository root, the production build, TypeScript, all four content tests, and all three browser-check functions passed again against that root export. The temporary preview server and browser were closed after verification.
