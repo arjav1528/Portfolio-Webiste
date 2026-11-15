@@ -52,6 +52,7 @@ export function SpotlightCard({
   return (
     <motion.article
       ref={ref}
+      data-reveal
       layout={enabled}
       className={`${className} spotlight-card`}
       initial={false}

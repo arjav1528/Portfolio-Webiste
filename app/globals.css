@@ -2935,7 +2935,8 @@ html[data-motion="paused"] .spotlight-card::after {
   opacity: 0;
 }
 html[data-motion="paused"] .tilted-surface,
-html[data-motion="paused"] .magnet-surface {
+html[data-motion="paused"] .magnet-surface,
+html[data-motion="paused"] .scroll-scene {
   transform: none !important;
 }
 html[data-motion="paused"] .slide-label-track {
@@ -2949,7 +2950,8 @@ html[data-motion="paused"] .slide-label-track > span:last-child {
 }
 @media (prefers-reduced-motion: reduce) {
   .tilted-surface,
-  .magnet-surface {
+  .magnet-surface,
+  .scroll-scene {
     transform: none !important;
   }
   .spotlight-card::after {
@@ -2969,6 +2971,9 @@ html[data-motion="paused"] .slide-label-track > span:last-child {
   }
 }
 @media (max-width: 760px) {
+  .scroll-scene {
+    transform: none !important;
+  }
   .email-actions {
     gap: 18px 15px;
   }

@@ -9,6 +9,10 @@ import {
 } from "@/components/effects/react-bits";
 import { SlideTextLink } from "@/components/effects/slide-text-link";
 import { CopyEmail } from "@/components/effects/copy-email";
+import {
+  HeroParallax,
+  ViewportMotion,
+} from "@/components/effects/viewport-motion";
 import content from "@/lib/content.json";
 function Marquee({ reverse = false }: { reverse?: boolean }) {
   return (
@@ -33,6 +37,7 @@ export default function Home() {
       </a>
       <div id="top" />
       <Navigation />
+      <ViewportMotion />
       <main id="main">
         <section className="hero shell" aria-labelledby="hero-title">
           <div className="hero-copy">
@@ -75,7 +80,7 @@ export default function Home() {
               <span>Always in progress ↴</span>
             </div>
           </div>
-          <div className="hero-collage">
+          <HeroParallax>
             <div className="collage-cross" aria-hidden="true">
               +
             </div>
@@ -133,7 +138,7 @@ export default function Home() {
             <div className="collage-coordinate">
               PERSONAL PORTFOLIO / VOL. 2026
             </div>
-          </div>
+          </HeroParallax>
         </section>
         <Marquee />
         <section
@@ -141,7 +146,7 @@ export default function Home() {
           className="work-section shell section-pad"
           aria-labelledby="work-title"
         >
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow">The selected collection</p>
               <h2 id="work-title">
@@ -164,7 +169,7 @@ export default function Home() {
           className="journey-section shell section-pad"
           aria-labelledby="journey-title"
         >
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow">People, products, progress</p>
               <h2 id="journey-title">
@@ -183,6 +188,7 @@ export default function Home() {
             {content.experience.map((item, index) => (
               <details
                 className="experience-row"
+                data-reveal
                 key={item.company + item.role}
                 open={index < 2}
               >
@@ -214,7 +220,7 @@ export default function Home() {
           className="opensource-section shell section-pad"
           aria-labelledby="opensource-title"
         >
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow">Built in the open</p>
               <h2 id="opensource-title">
@@ -230,7 +236,7 @@ export default function Home() {
             </p>
           </div>
           <div className="opensource-grid">
-            <article className="apache-card cream">
+            <article className="apache-card cream" data-reveal>
               <div className="card-topline">
                 <span>Apache Software Foundation</span>
                 <span aria-hidden="true">↗</span>
@@ -282,7 +288,7 @@ export default function Home() {
                 ))}
               </div>
             </article>
-            <article className="toolkit-card magenta">
+            <article className="toolkit-card magenta" data-reveal>
               <span className="mini-label">On pub.dev</span>
               <Star />
               <h3>
@@ -310,13 +316,13 @@ export default function Home() {
         </section>
         <section className="impact-section" aria-labelledby="impact-title">
           <div className="shell">
-            <div className="impact-header">
+            <div className="impact-header" data-reveal>
               <p className="eyebrow">A few things I’m proud of</p>
               <h2 id="impact-title">The ripple effect.</h2>
               <p>Better apps. More builders. A little more possibility.</p>
             </div>
             <div className="impact-wall">
-              <article className="receipt">
+              <article className="receipt" data-reveal>
                 <div className="receipt-heading">CAMPUS / IMPACT RECEIPT</div>
                 <strong>₹10M+</strong>
                 <p>
@@ -339,7 +345,7 @@ export default function Home() {
                 </div>
                 <div className="barcode" />
               </article>
-              <article className="mentoring-note">
+              <article className="mentoring-note" data-reveal>
                 <span className="tape" aria-hidden="true" />
                 <span className="mini-label">Pass it forward ✳</span>
                 <strong>
@@ -354,7 +360,7 @@ export default function Home() {
                 <span className="note-signoff">DevSoc × CTE / BITS Goa</span>
                 <Star />
               </article>
-              <article className="performance-note">
+              <article className="performance-note" data-reveal>
                 <div className="window-bar">
                   <span>● ● ●</span>
                   <span>less_is_more.log</span>
@@ -381,7 +387,7 @@ export default function Home() {
           aria-labelledby="about-title"
         >
           <div className="about-intro">
-            <div>
+            <div data-reveal>
               <p className="eyebrow">The person behind the commits</p>
               <h2 id="about-title">
                 Engineer by
@@ -395,7 +401,7 @@ export default function Home() {
                 </span>
               </h2>
             </div>
-            <div className="about-copy">
+            <div className="about-copy" data-reveal>
               <p className="large-copy">
                 Hey, I’m Arjav. I like the space where a technical challenge
                 becomes something useful.
@@ -418,7 +424,7 @@ export default function Home() {
             </div>
           </div>
           <div className="education-research">
-            <article className="education-card cream">
+            <article className="education-card cream" data-reveal>
               <Image
                 src="/bits-goa.jpg"
                 alt="BITS Pilani Goa campus"
@@ -446,7 +452,7 @@ export default function Home() {
                 </details>
               </div>
             </article>
-            <article className="research-card cobalt">
+            <article className="research-card cobalt" data-reveal>
               <div className="card-topline">
                 <span>Research / Energy × data</span>
                 <Star />
@@ -489,13 +495,13 @@ export default function Home() {
             </article>
           </div>
           <div className="skills-section">
-            <div className="skills-heading">
+            <div className="skills-heading" data-reveal>
               <h3>My working toolkit.</h3>
               <span>Always adding to it ↘</span>
             </div>
             <div className="skills-grid">
               {content.skills.map((group) => (
-                <div key={group.name}>
+                <div key={group.name} data-reveal>
                   <h4>{group.name}</h4>
                   <ul className="skill-tags">
                     {group.items.map((skill) => (
@@ -509,7 +515,7 @@ export default function Home() {
         </section>
       </main>
       <footer id="contact">
-        <div className="footer-top shell">
+        <div className="footer-top shell" data-reveal>
           <div>
             <p className="eyebrow">Got something in mind?</p>
             <h2>
@@ -535,7 +541,7 @@ export default function Home() {
             <Arrow diagonal />
           </a>
         </div>
-        <div className="footer-contact shell">
+        <div className="footer-contact shell" data-reveal>
           <CopyEmail />
           <div>
             <a
